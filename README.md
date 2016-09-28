@@ -8,16 +8,14 @@
 
 ##How to
 
-1) Check out this repo
+1) Go to terminal
 
-2) Go to terminal
+2) Navigate to your folder containing the ADB (SDK/platform-tools/)
 
-3) Navigate to your folder containing the ADB (SDK/platform-tools/)
-
-4) Execute the following:
+3) Execute the following:
 
 
     adb shell "pm grant com.icapps.tiles android.permission.WRITE_SECURE_SETTINGS"
 
 
-5) Install the APK on your device
+4) Install the APK on your device
