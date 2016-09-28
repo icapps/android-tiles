@@ -1,11 +1,9 @@
-package com.icapps.tiles.service;
+package com.icapps.tiles;
 
 import android.graphics.drawable.Icon;
 import android.provider.Settings;
 import android.service.quicksettings.Tile;
 import android.service.quicksettings.TileService;
-
-import com.icapps.tiles.R;
 
 import static android.provider.Settings.Global.ADB_ENABLED;
 import static android.provider.Settings.Global.DEVELOPMENT_SETTINGS_ENABLED;
@@ -36,9 +34,11 @@ public class DeveloperOptionsService extends TileService {
     }
 
     private void updateTile() {
-        getQsTile().setIcon(isDeveloperOptionsEnabled() ? Icon.createWithResource(getApplicationContext(), R.drawable.ic_developer_options_enabled) : Icon.createWithResource(getApplicationContext(), R.drawable.ic_developer_options_disabled));
-        getQsTile().setState(isDeveloperOptionsEnabled() ? Tile.STATE_ACTIVE : Tile.STATE_INACTIVE);
-        getQsTile().updateTile();
+        final boolean isEnabled = isDeveloperOptionsEnabled();
+        final Tile tile = getQsTile();
+        tile.setIcon(isEnabled ? Icon.createWithResource(getApplicationContext(), R.drawable.ic_developer_options_enabled) : Icon.createWithResource(getApplicationContext(), R.drawable.ic_developer_options_disabled));
+        tile.setState(isEnabled ? Tile.STATE_ACTIVE : Tile.STATE_INACTIVE);
+        tile.updateTile();
     }
 
     private boolean isDeveloperOptionsEnabled() {

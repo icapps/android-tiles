@@ -1,11 +1,9 @@
-package com.icapps.tiles.service;
+package com.icapps.tiles;
 
 import android.graphics.drawable.Icon;
 import android.provider.Settings;
 import android.service.quicksettings.Tile;
 import android.service.quicksettings.TileService;
-
-import com.icapps.tiles.R;
 
 import static android.provider.Settings.Global.ALWAYS_FINISH_ACTIVITIES;
 
@@ -31,9 +29,11 @@ public class DoNotKeepActivitiesService extends TileService {
     }
 
     private void updateTile() {
-        getQsTile().setIcon(isDoNotKeepActivitiesEnabled() ? Icon.createWithResource(getApplicationContext(), R.drawable.ic_do_not_keep_activities_enabled) : Icon.createWithResource(getApplicationContext(), R.drawable.ic_do_not_keep_activities_disabled));
-        getQsTile().setState(isDoNotKeepActivitiesEnabled() ? Tile.STATE_ACTIVE : Tile.STATE_INACTIVE);
-        getQsTile().updateTile();
+        final boolean isEnabled = isDoNotKeepActivitiesEnabled();
+        final Tile tile = getQsTile();
+        tile.setIcon(isEnabled ? Icon.createWithResource(getApplicationContext(), R.drawable.ic_do_not_keep_activities_enabled) : Icon.createWithResource(getApplicationContext(), R.drawable.ic_do_not_keep_activities_disabled));
+        tile.setState(isEnabled ? Tile.STATE_ACTIVE : Tile.STATE_INACTIVE);
+        tile.updateTile();
     }
 
     private boolean isDoNotKeepActivitiesEnabled() {

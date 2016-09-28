@@ -1,6 +1,5 @@
 <resources>
     <string name="app_name">Tiles</string>
-    <string name="main_description">In terminal, navigate to your ADB folder\nExecute the following:\n./adb shell\npm grant com.icapps.tiles android.permission.WRITE_SECURE_SETTINGS</string>
     <string name="tile_activities">Do Not Keep Activities</string>
     <string name="tile_developer_options">Developer Options</string>
 </resources>
