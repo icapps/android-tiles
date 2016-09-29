@@ -12,7 +12,7 @@
         android:theme="@style/AppTheme">
 
         <service
-            android:name="com.icapps.tiles.service.DoNotKeepActivitiesService"
+            android:name="com.icapps.tiles.DoNotKeepActivitiesService"
             android:icon="@drawable/ic_do_not_keep_activities_enabled"
             android:label="@string/tile_activities"
             android:permission="android.permission.BIND_QUICK_SETTINGS_TILE">
@@ -22,7 +22,7 @@
         </service>
 
         <service
-            android:name="com.icapps.tiles.service.DeveloperOptionsService"
+            android:name="com.icapps.tiles.DeveloperOptionsService"
             android:icon="@drawable/ic_developer_options_enabled"
             android:label="@string/tile_developer_options"
             android:permission="android.permission.BIND_QUICK_SETTINGS_TILE">
