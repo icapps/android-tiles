@@ -1,12 +1,12 @@
-#Tiles contains a few utilities for Android developers
+# Tiles contains a few utilities for Android developers
 
-##Features
+## Features
 
 1) Enable/ disable the "do not keep activities" setting
 
 2) Enable/ disable the developer options
 
-##How to
+## How to
 
 1) Install the APK on your device
 
